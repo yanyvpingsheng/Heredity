@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yanyv.workstation.MainController">
+    <children>
+        <ToolBar prefHeight="40.0" prefWidth="1000.0">
+            <items>
+                <Button mnemonicParsing="false" onAction="#load" text="加载" />
+                <Button mnemonicParsing="false" onAction="#seekSolution" text="求解" />
+            </items>
+        </ToolBar>
+      <TabPane fx:id="mainTabPane" layoutY="40.0" prefHeight="662.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="staticMaskTableTab" text="静态调度任务表">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                          <TableView id="maskTable" fx:id="maskTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="635.0" prefWidth="1000.0">
+                              <columns>
+                                  <TableColumn id="processIdColumn" fx:id="processIdColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="工序号" />
+                                  <TableColumn id="workpieceIdColumn" fx:id="workpieceIdColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="工件号" />
+                                  <TableColumn id="processNameColumn" fx:id="processNameColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="工序名称" />
+                                  <TableColumn id="workTimeColumn" fx:id="workTimeColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="加工时间" />
+                                  <TableColumn id="useMachineColumn" fx:id="useMachineColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="占用设备" />
+                              </columns>
+                          </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="seekSolutionTableTab" text="求解视图">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="6.0" layoutY="6.0" text="DNA 列表" AnchorPane.leftAnchor="10.0" />
+                        <ListView fx:id="dnaListView" layoutX="6.0" layoutY="24.0" prefHeight="600.0" prefWidth="200.0" stylesheets="@css/ListViewCSS.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="20.0" />
+                        <Label layoutX="215.0" layoutY="6.0" text="作业计划甘特图" AnchorPane.leftAnchor="215.0" />
+                        <Pane fx:id="workPlanGanttPane" layoutX="218.0" layoutY="24.0" prefHeight="295.0" prefWidth="710.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="20.0" />
+                        <Label layoutX="215.0" layoutY="314.0" text="机器计划甘特图" AnchorPane.leftAnchor="215.0" />
+                        <Pane fx:id="machinePlanGanttPane" layoutX="228.0" layoutY="34.0" prefHeight="295.0" prefWidth="710.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="215.0" AnchorPane.rightAnchor="5.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="作业计划阵">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="机器计划阵">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Untitled Tab 2">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab text="Untitled Tab 2">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+    </children>
+</AnchorPane>
